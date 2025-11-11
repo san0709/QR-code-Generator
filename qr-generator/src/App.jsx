@@ -60,7 +60,7 @@ function App() {
           Generate QR Code
         </button>
         <button className="cursor-pointer" onClick={downloadQr}>
-          Dowload QR Code
+          Download QR Code
         </button>
       </div>
     </div>
