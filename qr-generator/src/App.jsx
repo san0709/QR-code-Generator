@@ -21,10 +21,16 @@ function App() {
   }
 
   function downloadQr() {
-    fetch(img).then((response) => response.blob()).then((blob) => {
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob)
-    })
+    fetch(img)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "qr.jpg";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
   }
   return (
     <div className="container">
